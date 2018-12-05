@@ -1,5 +1,8 @@
 package com.git.poan.common;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Author: panbenxing
  * @Date: 2018/11/21
@@ -21,5 +24,17 @@ public enum VersionEnum {
 
     VersionEnum(String version) {
         this.version = version;
+    }
+
+    private static Map<String, VersionEnum> cacheMap = new HashMap<>();
+
+    static {
+        for (VersionEnum versionEnum : VersionEnum.values()) {
+            cacheMap.put(versionEnum.version, versionEnum);
+        }
+    }
+
+    public static VersionEnum getByVal(String versoin) {
+        return cacheMap.get(versoin);
     }
 }
