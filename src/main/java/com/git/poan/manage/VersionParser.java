@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class VersionParser {
 
-    public static void main(String[] args) throws InstantiationException, IllegalAccessException, ValidateException {
+    public static void main(String[] args) throws ValidateException {
         User user = new User();
         user.setVersion("1.0.0");
         user.setName("张三");
